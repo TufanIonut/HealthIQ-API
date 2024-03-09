@@ -6,6 +6,7 @@ using ITFestHackathon_API.Repositories.Recipe;
 using ITFestHackathon_API.Repositories.Disease;
 using ITFestHackathon_API.Repositories.User;
 using ITFestHackathon_API.Repositories.Diseases;
+using ITFestHackathon_API.Repositories.Advice;
 
 namespace ITFestHackathon_API
 {
@@ -44,11 +45,14 @@ namespace ITFestHackathon_API
             services.AddScoped<IDeleteDiseaseRepository, DeleteDiseaseRepository>();
             services.AddScoped<IAddDiseaseRepository, AddDiseaseRepository>();
             services.AddScoped<IUpdateDiseaseRepository, UpdateDiseaseRepository>();
-            
+            //--------------------------------------------------------------------
+            //ADVICES
+            services.AddScoped<IGetAdvicesRepository, GetAdvicesRepository>();
 
-            
-            
-            
+
+
+
+
 
 
             return services;

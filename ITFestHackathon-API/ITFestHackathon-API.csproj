@@ -34,13 +34,14 @@
     <None Remove="Interfaces\NewFile1.txt" />
     <None Remove="Repositories\.txt" />
     <None Remove="Repositories\AddIngredientAdminRepository" />
+    <None Remove="Repositories\Advice\NewFile.txt" />
     <None Remove="Repositories\DeleteIngredientRepository" />
     <None Remove="Repositories\Disease\NewFile.txt" />
     <None Remove="Repositories\GetRecipeRepository" />
     <None Remove="Repositories\IngredientsType\NewFile.txt" />
-    <None Remove="Repositories\NewFile.txt" />
     <None Remove="Repositories\NewFile1.txt" />
     <None Remove="Repositories\Recipe\NewFile.txt" />
+    <None Remove="Responses\NewFile.txt" />
   </ItemGroup>
 
   <ItemGroup>

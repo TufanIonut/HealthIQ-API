@@ -11,6 +11,6 @@
         public string FitLevel { get; set; }
         public int TrainingFrequency { get; set; }
         public string UserTarget { get; set; }
-        public int Gender { get; set; }
+        public string? Gender { get; set; }
     }
 }
