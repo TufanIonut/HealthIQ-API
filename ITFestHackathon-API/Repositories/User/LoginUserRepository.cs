@@ -3,7 +3,7 @@ using Dapper;
 using ITFestHackathon_API.DTOs;
 using ITFestHackathon_API.Interfaces;
 
-namespace ITFestHackathon_API.Repositories
+namespace ITFestHackathon_API.Repositories.User
 {
     public class LoginUserRepository : ILoginUserRepository
     {

@@ -4,7 +4,7 @@ using ITFestHackathon_API.Interfaces;
 using System.Data;
 
 
-namespace ITFestHackathon_API.Repositories
+namespace ITFestHackathon_API.Repositories.User
 {
     public class InsertUserInformationRepository : IInsertUserInformationRepository
     {
@@ -17,10 +17,10 @@ namespace ITFestHackathon_API.Repositories
 
         public async Task<int> InsertUserInformationAsyncRepo(UserInformationDTO userInformationDTO)
         {
-           var parameters = new DynamicParameters();
+            var parameters = new DynamicParameters();
             parameters.Add("@UserID", userInformationDTO.UserID);
             parameters.Add("@FirstName", userInformationDTO.FirstName);
-            parameters.Add("@LastName", userInformationDTO.LastName);              
+            parameters.Add("@LastName", userInformationDTO.LastName);
             parameters.Add("@BirthDate", userInformationDTO.BirthDate);
             parameters.Add("@Weight", userInformationDTO.Weight);
             parameters.Add("@Height", userInformationDTO.Height);

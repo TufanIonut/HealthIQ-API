@@ -3,6 +3,6 @@
     public class IngredientType
     {
         public int IdIngredientType { get; set; }
-        public String Type { get; set; }
+        public string Type { get; set; }
     }
 }

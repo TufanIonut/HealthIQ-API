@@ -3,7 +3,7 @@ using Dapper;
 using ITFestHackathon_API.DTOs;
 using ITFestHackathon_API.Interfaces;
 
-namespace ITFestHackathon_API.Repositories
+namespace ITFestHackathon_API.Repositories.User
 {
     public class RegisterUserRepository : IRegisterUserRepository
     {
@@ -13,7 +13,7 @@ namespace ITFestHackathon_API.Repositories
             _dbConnectionFactory = dbConnectionFactory;
         }
 
-        public async Task<int> RegisterUserAsyncRepo(UserCredentialsDTO userCredentialsDTO )
+        public async Task<int> RegisterUserAsyncRepo(UserCredentialsDTO userCredentialsDTO)
         {
             var parameters = new DynamicParameters();
             parameters.Add("@Email", userCredentialsDTO.Email);

@@ -1,8 +1,8 @@
 ﻿namespace ITFestHackathon_API.Entities
 {
-    public class IngredientType
+    public class WorkoutCategory
     {
         public int IdWorkoutCategory { get; set; }
-        public String WorkoutCategory_Name { get; set; }
+        public string WorkoutCategory_Name { get; set; }
     }
 }

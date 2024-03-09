@@ -10,19 +10,37 @@
   <ItemGroup>
     <Compile Remove="DTOs\RegisterUserDTO.cs" />
     <Compile Remove="Entities\Advices.cs" />
+    <Compile Remove="Interfaces\IAddIngredientAdminRepository.cs" />
+    <Compile Remove="Repositories\AddIngredientAdminRepository.cs" />
     <Compile Remove="Repositories\LoginUserResository.cs" />
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="Controllers\NewFile.txt" />
     <None Remove="DTOs\IngredientDTO" />
     <None Remove="DTOs\NewFile.txt" />
+    <None Remove="DTOs\RecipeDTO" />
+    <None Remove="DTOs\Update\NewFile.txt" />
+    <None Remove="DTOs\Update\UpdateIngredientTypeDTO" />
     <None Remove="Entities\IngredientType" />
     <None Remove="Entities\NewFile1.txt" />
     <None Remove="Entities\WorkoutCategory" />
     <None Remove="Interfaces\IAddIngredientAdminRepository" />
+    <None Remove="Interfaces\IDeleteDiseaseRepository" />
+    <None Remove="Interfaces\IGetIngredientsRepository" />
+    <None Remove="Interfaces\IGetRecipeRepository" />
+    <None Remove="Interfaces\IUpdateRecipeRepository" />
     <None Remove="Interfaces\NewFile.txt" />
+    <None Remove="Interfaces\NewFile1.txt" />
+    <None Remove="Repositories\.txt" />
     <None Remove="Repositories\AddIngredientAdminRepository" />
+    <None Remove="Repositories\DeleteIngredientRepository" />
+    <None Remove="Repositories\Disease\NewFile.txt" />
+    <None Remove="Repositories\GetRecipeRepository" />
+    <None Remove="Repositories\IngredientsType\NewFile.txt" />
     <None Remove="Repositories\NewFile.txt" />
+    <None Remove="Repositories\NewFile1.txt" />
+    <None Remove="Repositories\Recipe\NewFile.txt" />
   </ItemGroup>
 
   <ItemGroup>

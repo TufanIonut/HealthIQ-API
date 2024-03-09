@@ -1,7 +1,8 @@
-﻿namespace ITFestHackathon_API.DTOs
+﻿namespace ITFestHackathon_API.DTOs.Update
 {
-    public class IngredientDTO
+    public class UpdateIngredientDTO
     {
+        public int IdIngredient { get; set; }
         public string IngredientName { get; set; }
         public string IngredientType { get; set; }
         public float CaloriesNOPer100g { get; set; }
