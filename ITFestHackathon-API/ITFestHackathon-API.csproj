@@ -22,7 +22,9 @@
     <None Remove="DTOs\RecipeDTO" />
     <None Remove="DTOs\Update\NewFile.txt" />
     <None Remove="DTOs\Update\UpdateIngredientTypeDTO" />
+    <None Remove="DTOs\Update\UpdateWaterConsumptionDTO" />
     <None Remove="Entities\IngredientType" />
+    <None Remove="Entities\NewFile.txt" />
     <None Remove="Entities\NewFile1.txt" />
     <None Remove="Entities\WorkoutCategory" />
     <None Remove="Interfaces\IAddIngredientAdminRepository" />
@@ -41,7 +43,8 @@
     <None Remove="Repositories\IngredientsType\NewFile.txt" />
     <None Remove="Repositories\NewFile1.txt" />
     <None Remove="Repositories\Recipe\NewFile.txt" />
-    <None Remove="Responses\NewFile.txt" />
+    <None Remove="Repositories\WaterConsumption\NewFile.txt" />
+    <None Remove="Responses\GetWaterConsumptionResponse" />
   </ItemGroup>
 
   <ItemGroup>

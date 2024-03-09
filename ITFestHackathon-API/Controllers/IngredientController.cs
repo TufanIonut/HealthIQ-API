@@ -14,6 +14,7 @@ namespace ITFestHackathon_API.Controllers
         private readonly IAddIngredientRepository _addIngredientRepository;
         private readonly IDeleteIngredientRepository _deleteIngredientRepository;
         private readonly IUpdateIngredientRepository _updateIngredientRepository;
+
         public IngredientController(IGetIngredientsRepository getIngredientsRepository,IAddIngredientRepository addIngredientRepository,
             IDeleteIngredientRepository deleteIngredientRepository, IUpdateIngredientRepository updateIngredientRepository)
         {

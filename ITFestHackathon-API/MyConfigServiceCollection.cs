@@ -7,6 +7,7 @@ using ITFestHackathon_API.Repositories.Disease;
 using ITFestHackathon_API.Repositories.User;
 using ITFestHackathon_API.Repositories.Diseases;
 using ITFestHackathon_API.Repositories.Advice;
+using ITFestHackathon_API.Repositories.WaterConsumption;
 
 namespace ITFestHackathon_API
 {
@@ -48,7 +49,10 @@ namespace ITFestHackathon_API
             //--------------------------------------------------------------------
             //ADVICES
             services.AddScoped<IGetAdvicesRepository, GetAdvicesRepository>();
-
+            //--------------------------------------------------------------------
+            //WATER CONSUMPTION
+            services.AddScoped<IGetWaterConsumptionRepository, GetWaterConsumptionRepository>();
+            services.AddScoped<IUpdateWaterConsumptionRepository, UpdateWaterConsumptionRepository>();
 
 
 
