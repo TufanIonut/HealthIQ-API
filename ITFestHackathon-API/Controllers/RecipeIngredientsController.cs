@@ -30,6 +30,4 @@ namespace ITFestHackathon_API.Controllers
             return Ok(result);
         }
     }
-
-
 }

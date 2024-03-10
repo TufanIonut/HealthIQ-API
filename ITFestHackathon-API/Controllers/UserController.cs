@@ -13,13 +13,29 @@ namespace ITFestHackathon_API.Controllers
         private readonly ILoginUserRepository _loginUserRepository;
         private readonly IInsertUserInformationRepository _insertUserInformationRepository;
         private readonly IUpdateUserPointsRepository _updateUserPointsRepository;
+        private readonly IGetCalorieIntakeRepository _getCalorieIntakeRepository;
+
         public UserController(IRegisterUserRepository registerUserRepository, ILoginUserRepository loginUserRepository,
-            IInsertUserInformationRepository insertUserInformationRepository, IUpdateUserPointsRepository updateUserPointsRepository)
+            IInsertUserInformationRepository insertUserInformationRepository, IUpdateUserPointsRepository updateUserPointsRepository,
+            IGetCalorieIntakeRepository getCalorieIntakeRepository)
         {
             _registerUserRepository = registerUserRepository;
             _loginUserRepository = loginUserRepository;
             _insertUserInformationRepository = insertUserInformationRepository;
             _updateUserPointsRepository = updateUserPointsRepository;
+            _getCalorieIntakeRepository = getCalorieIntakeRepository;
+        }
+
+        [HttpGet]
+        [Route("GetRecommendedCalorieIntake")]
+        public async Task<IActionResult> GetRecommendedCalorieIntake(int userId)
+        {
+            var result = await _getCalorieIntakeRepository.GetCalorieIntakeAsyncRepo(userId);
+
+            if (result == null)
+                return BadRequest();
+
+            return Ok(result);
         }
 
         [HttpPost]

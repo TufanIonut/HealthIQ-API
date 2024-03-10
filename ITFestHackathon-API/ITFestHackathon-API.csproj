@@ -8,10 +8,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="DTOs\ExerciseDTO.cs" />
     <Compile Remove="DTOs\RegisterUserDTO.cs" />
     <Compile Remove="Entities\Advices.cs" />
     <Compile Remove="Interfaces\IAddIngredientAdminRepository.cs" />
     <Compile Remove="Repositories\AddIngredientAdminRepository.cs" />
+    <Compile Remove="Repositories\CalorieIntake\GetCalorieIntake.cs" />
+    <Compile Remove="Repositories\Exercise\GetExercises.cs" />
+    <Compile Remove="Repositories\Exercise\GetExercisesRepository.cs" />
     <Compile Remove="Repositories\LoginUserResository.cs" />
     <Compile Remove="Repositories\Recipe\GetRecipeWithIngredients.cs" />
   </ItemGroup>
@@ -38,8 +42,10 @@
     <None Remove="Repositories\.txt" />
     <None Remove="Repositories\AddIngredientAdminRepository" />
     <None Remove="Repositories\Advice\NewFile.txt" />
+    <None Remove="Repositories\CalorieIntake\NewFile.txt" />
     <None Remove="Repositories\DeleteIngredientRepository" />
     <None Remove="Repositories\Disease\NewFile.txt" />
+    <None Remove="Repositories\Exercise\NewFile.txt" />
     <None Remove="Repositories\GetRecipeRepository" />
     <None Remove="Repositories\IngredientsType\NewFile.txt" />
     <None Remove="Repositories\NewFile1.txt" />

@@ -9,6 +9,8 @@ using ITFestHackathon_API.Repositories.User;
 using ITFestHackathon_API.Repositories.Diseases;
 using ITFestHackathon_API.Repositories.Advice;
 using ITFestHackathon_API.Repositories.WaterConsumption;
+using ITFestHackathon_API.Repositories.CalorieIntake;
+using ITFestHackathon_API.Repositories.Exercise;
 
 namespace ITFestHackathon_API
 {
@@ -61,7 +63,11 @@ namespace ITFestHackathon_API
             services.AddScoped<IGetWaterConsumptionRepository, GetWaterConsumptionRepository>();
             services.AddScoped<IUpdateWaterConsumptionRepository, UpdateWaterConsumptionRepository>();
             //--------------------------------------------------------------------
-            //
+            //CALORIE INTAKE
+            services.AddScoped<IGetCalorieIntakeRepository, GetCalorieIntakeRepository>();
+            //--------------------------------------------------------------------
+            //EXERCISES - MUSCLES
+            services.AddScoped<IGetExercisesWithMusclesRepository, GetExercisesWithMusclesRepository>();
 
 
 
