@@ -56,6 +56,7 @@
     <None Remove="Repositories\WaterConsumption\NewFile.txt" />
     <None Remove="Repositories\Workout\NewFile.txt" />
     <None Remove="Responses\GetWaterConsumptionResponse" />
+    <None Remove="Responses\NewFile.txt" />
   </ItemGroup>
 
   <ItemGroup>

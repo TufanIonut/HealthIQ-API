@@ -27,6 +27,7 @@ namespace ITFestHackathon_API
             services.AddScoped<ILoginUserRepository, LoginUserRepository>();
             services.AddScoped<IInsertUserInformationRepository, InsertUserInformationRepository>();
             services.AddScoped<IUpdateUserPointsRepository, UpdateUserPointsRepository>();
+            services.AddScoped<IGetUserInfoRepository, GetUserInfoRepository>();
             //--------------------------------------------------------------------
             //INGREDIENTS
             services.AddScoped<IAddIngredientRepository, AddIngredientRepository>();
