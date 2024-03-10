@@ -12,11 +12,14 @@ namespace ITFestHackathon_API.Controllers
         private readonly IRegisterUserRepository _registerUserRepository;
         private readonly ILoginUserRepository _loginUserRepository;
         private readonly IInsertUserInformationRepository _insertUserInformationRepository;
-        public UserController(IRegisterUserRepository registerUserRepository, ILoginUserRepository loginUserRepository, IInsertUserInformationRepository insertUserInformationRepository)
+        private readonly IUpdateUserPointsRepository _updateUserPointsRepository;
+        public UserController(IRegisterUserRepository registerUserRepository, ILoginUserRepository loginUserRepository,
+            IInsertUserInformationRepository insertUserInformationRepository, IUpdateUserPointsRepository updateUserPointsRepository)
         {
             _registerUserRepository = registerUserRepository;
             _loginUserRepository = loginUserRepository;
             _insertUserInformationRepository = insertUserInformationRepository;
+            _updateUserPointsRepository = updateUserPointsRepository;
         }
 
         [HttpPost]
@@ -48,12 +51,28 @@ namespace ITFestHackathon_API.Controllers
                     return Ok(userID);
             }
         }
+
         [HttpPatch]
         [Route("UpdateUserInfo")]
         public async Task<IActionResult> UpdateUserInfoAsync([FromBody] UserInformationDTO userInformationDTO)
         {
             var success = await _insertUserInformationRepository.InsertUserInformationAsyncRepo(userInformationDTO);
             if(success == 1)
+            {
+                return Ok(success);
+            }
+            else
+            {
+                return BadRequest("Update failed");
+            }
+        }
+
+        [HttpPatch]
+        [Route("UpdateUserPoints")]
+        public async Task<IActionResult> UpdateUserPointsAsync([FromBody] UpdateUserPointsDTO userPointsDTO)
+        {
+            var success = await _updateUserPointsRepository.UpdateUserPointsAsyncRepo(userPointsDTO);
+            if (success == 1)
             {
                 return Ok(success);
             }

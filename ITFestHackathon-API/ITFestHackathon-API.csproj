@@ -13,6 +13,7 @@
     <Compile Remove="Interfaces\IAddIngredientAdminRepository.cs" />
     <Compile Remove="Repositories\AddIngredientAdminRepository.cs" />
     <Compile Remove="Repositories\LoginUserResository.cs" />
+    <Compile Remove="Repositories\Recipe\GetRecipeWithIngredients.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -42,7 +43,10 @@
     <None Remove="Repositories\GetRecipeRepository" />
     <None Remove="Repositories\IngredientsType\NewFile.txt" />
     <None Remove="Repositories\NewFile1.txt" />
+    <None Remove="Repositories\RecipeIngredients\GetRecipeIngredientsRepository" />
+    <None Remove="Repositories\RecipeIngredients\NewFile.txt" />
     <None Remove="Repositories\Recipe\NewFile.txt" />
+    <None Remove="Repositories\User\NewFile.txt" />
     <None Remove="Repositories\WaterConsumption\NewFile.txt" />
     <None Remove="Responses\GetWaterConsumptionResponse" />
   </ItemGroup>

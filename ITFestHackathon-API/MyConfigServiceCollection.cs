@@ -3,6 +3,7 @@ using ITFestHackathon_API.Interfaces;
 using ITFestHackathon_API.Repositories.Ingredients;
 using ITFestHackathon_API.Repositories.IngredientsType;
 using ITFestHackathon_API.Repositories.Recipe;
+using ITFestHackathon_API.Repositories.RecipeIngredients;
 using ITFestHackathon_API.Repositories.Disease;
 using ITFestHackathon_API.Repositories.User;
 using ITFestHackathon_API.Repositories.Diseases;
@@ -22,6 +23,7 @@ namespace ITFestHackathon_API
             services.AddScoped<IRegisterUserRepository, RegisterUserRepository>();
             services.AddScoped<ILoginUserRepository, LoginUserRepository>();
             services.AddScoped<IInsertUserInformationRepository, InsertUserInformationRepository>();
+            services.AddScoped<IUpdateUserPointsRepository, UpdateUserPointsRepository>();
             //--------------------------------------------------------------------
             //INGREDIENTS
             services.AddScoped<IAddIngredientRepository, AddIngredientRepository>();
@@ -41,6 +43,11 @@ namespace ITFestHackathon_API
             services.AddScoped<IAddRecipeRepository, AddRecipeRepository>();
             services.AddScoped<IUpdateRecipeRepository, UpdateRecipeRepository>();
             //--------------------------------------------------------------------
+            //RECIPE - INGREDIENTS
+            services.AddScoped<IAddRecipeWithIngredientsRepository,AddRecipeWithIngredientsRepository>();
+            services.AddScoped<IDeleteRecipeWithIngredientsRepository, DeleteRecipeWithIngredientsRepository>();
+            services.AddScoped<IGetRecipeIngredientsRepository, GetRecipeIngredientsRepository>();
+            //--------------------------------------------------------------------
             //DISEASES
             services.AddScoped<IGetDiseasesRepository, GetDiseasesRepository>();
             services.AddScoped<IDeleteDiseaseRepository, DeleteDiseaseRepository>();
@@ -53,6 +60,8 @@ namespace ITFestHackathon_API
             //WATER CONSUMPTION
             services.AddScoped<IGetWaterConsumptionRepository, GetWaterConsumptionRepository>();
             services.AddScoped<IUpdateWaterConsumptionRepository, UpdateWaterConsumptionRepository>();
+            //--------------------------------------------------------------------
+            //
 
 
 
