@@ -1,4 +1,5 @@
-﻿using ITFestHackathon_API.DTOs.Update;
+﻿using ITFestHackathon_API.DTOs;
+using ITFestHackathon_API.DTOs.Update;
 using ITFestHackathon_API.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
@@ -11,11 +12,27 @@ namespace ITFestHackathon_API.Controllers
     {
         private readonly IGetWaterConsumptionRepository _getWaterConsumptionRepository;
         private readonly IUpdateWaterConsumptionRepository _updateWaterConsumptionRepository;
+        private readonly IAddWaterConsumptionRepository _addWaterConsumptionRepository;
 
-        public WaterConsumptionController(IGetWaterConsumptionRepository getWaterConsumptionRepository, IUpdateWaterConsumptionRepository updateWaterConsumptionRepository)
+        public WaterConsumptionController(IGetWaterConsumptionRepository getWaterConsumptionRepository,
+            IUpdateWaterConsumptionRepository updateWaterConsumptionRepository, 
+            IAddWaterConsumptionRepository addWaterConsumptionRepository)
         {
             _getWaterConsumptionRepository = getWaterConsumptionRepository;
-            _updateWaterConsumptionRepository = updateWaterConsumptionRepository; 
+            _updateWaterConsumptionRepository = updateWaterConsumptionRepository;
+            _addWaterConsumptionRepository = addWaterConsumptionRepository;
+        }
+
+        [HttpPost]
+        [Route("AddWaterConsumption")]
+        public async Task<IActionResult> AddRecipe(WaterConsumptionDTO waterConsumptionDTO)
+        {
+            var result = await _addWaterConsumptionRepository.AddWaterConsumptionAsyncRepo(waterConsumptionDTO);
+
+            if (result == 0)
+                return BadRequest();
+
+            return Ok(result);
         }
 
         [HttpGet]

@@ -64,6 +64,7 @@ namespace ITFestHackathon_API
             //WATER CONSUMPTION
             services.AddScoped<IGetWaterConsumptionRepository, GetWaterConsumptionRepository>();
             services.AddScoped<IUpdateWaterConsumptionRepository, UpdateWaterConsumptionRepository>();
+            services.AddScoped<IAddWaterConsumptionRepository, AddWaterConsumptionRepository>();
             //--------------------------------------------------------------------
             //CALORIE INTAKE
             services.AddScoped<IGetCalorieIntakeRepository, GetCalorieIntakeRepository>();
