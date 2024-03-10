@@ -15,9 +15,11 @@ namespace ITFestHackathon_API.Repositories.Workout
         }
         public async Task<IEnumerable<WorkoutPlanDTO>> GetWorkputPlanAsyncRepo(int idUser)
         {
+            var parameters = new DynamicParameters(idUser);
+            parameters.Add("@IdUser", idUser);
             using (var connection = _connectionFactory.ConnectToDataBase())
             {
-                var personalizedWorkouts = await connection.QueryAsync<WorkoutPlanDTO>("GetPersonalizedWorkouts", commandType: CommandType.StoredProcedure);
+                var personalizedWorkouts = await connection.QueryAsync<WorkoutPlanDTO>("GetPersonalizedWorkouts", parameters,commandType: CommandType.StoredProcedure);
                 return personalizedWorkouts;
             }
         }

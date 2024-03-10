@@ -11,6 +11,7 @@ using ITFestHackathon_API.Repositories.Advice;
 using ITFestHackathon_API.Repositories.WaterConsumption;
 using ITFestHackathon_API.Repositories.CalorieIntake;
 using ITFestHackathon_API.Repositories.Exercise;
+using ITFestHackathon_API.Repositories.Workout;
 
 namespace ITFestHackathon_API
 {
@@ -68,6 +69,9 @@ namespace ITFestHackathon_API
             //--------------------------------------------------------------------
             //EXERCISES - MUSCLES
             services.AddScoped<IGetExercisesWithMusclesRepository, GetExercisesWithMusclesRepository>();
+            //--------------------------------------------------------------------
+            //WORKOUT PLAN
+            services.AddScoped<IGetWorkoutPlanRepository, GetWorkoutPlanRepository>();
 
 
 
