@@ -1,10 +1,10 @@
 ﻿using Dapper;
-using ITFestHackathon_API.DTOs;
-using ITFestHackathon_API.Interfaces;
+using HealthIQ.DTOs;
+using HealthIQ.Interfaces;
 using System.Data;
 
 
-namespace ITFestHackathon_API.Repositories.User
+namespace HealthIQ.Repositories.User
 {
     public class UpdateUserPointsRepository : IUpdateUserPointsRepository
     {

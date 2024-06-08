@@ -1,9 +1,9 @@
 ﻿using Dapper;
-using ITFestHackathon_API.DTOs.Update;
-using ITFestHackathon_API.Interfaces;
+using HealthIQ.DTOs.Update;
+using HealthIQ.Interfaces;
 using System.Data;
 
-namespace ITFestHackathon_API.Repositories.Ingredients
+namespace HealthIQ.Repositories.Ingredients
 {
     public class UpdateIngredientRepository : IUpdateIngredientRepository
     {

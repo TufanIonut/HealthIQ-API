@@ -1,6 +1,6 @@
-﻿using ITFestHackathon_API.DTOs;
+﻿using HealthIQ.DTOs;
 
-namespace ITFestHackathon_API.Interfaces
+namespace HealthIQ.Interfaces
 {
     public interface IRegisterUserRepository
     {

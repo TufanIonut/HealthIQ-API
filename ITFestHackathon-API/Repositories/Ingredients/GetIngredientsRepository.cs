@@ -1,10 +1,10 @@
 ﻿using System.Data;
 using Dapper;
-using ITFestHackathon_API.DTOs;
-using ITFestHackathon_API.Interfaces;
-using ITFestHackathon_API.Responses;
+using HealthIQ.DTOs;
+using HealthIQ.Interfaces;
+using HealthIQ.Responses;
 
-namespace ITFestHackathon_API.Repositories.Ingredients
+namespace HealthIQ.Repositories.Ingredients
 {
     public class GetIngredientsRepository : IGetIngredientsRepository
     {

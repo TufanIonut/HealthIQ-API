@@ -1,12 +1,12 @@
-﻿using ITFestHackathon_API.DTOs;
-using ITFestHackathon_API.DTOs.Update;
-using ITFestHackathon_API.Interfaces;
+﻿using HealthIQ.DTOs;
+using HealthIQ.DTOs.Update;
+using HealthIQ.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
-namespace ITFestHackathon_API.Controllers
+namespace HealthIQ.Controllers
 {
-    [ApiController]
-    [Route("api/[controller]")]
+    //[ApiController]
+    //[Route("api/[controller]")]
     
     public class DiseaseController : ControllerBase 
     {

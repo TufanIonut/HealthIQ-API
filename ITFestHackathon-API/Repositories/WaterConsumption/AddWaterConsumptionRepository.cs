@@ -1,9 +1,9 @@
 ﻿using Dapper;
-using ITFestHackathon_API.DTOs;
-using ITFestHackathon_API.Interfaces;
+using HealthIQ.DTOs;
+using HealthIQ.Interfaces;
 using System.Data;
 
-namespace ITFestHackathon_API.Repositories.WaterConsumption
+namespace HealthIQ.Repositories.WaterConsumption
 {
     public class AddWaterConsumptionRepository : IAddWaterConsumptionRepository
     {

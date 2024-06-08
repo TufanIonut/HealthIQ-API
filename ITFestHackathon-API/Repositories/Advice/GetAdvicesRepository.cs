@@ -1,11 +1,11 @@
 ﻿using System.Data;
 using Dapper;
-using ITFestHackathon_API.DTOs;
-using ITFestHackathon_API.DTOs.Update;
-using ITFestHackathon_API.Interfaces;
-using ITFestHackathon_API.Responses;
+using HealthIQ.DTOs;
+using HealthIQ.DTOs.Update;
+using HealthIQ.Interfaces;
+using HealthIQ.Responses;
 
-namespace ITFestHackathon_API.Repositories.Advice
+namespace HealthIQ.Repositories.Advice
 {
     public class GetAdvicesRepository : IGetAdvicesRepository
     {

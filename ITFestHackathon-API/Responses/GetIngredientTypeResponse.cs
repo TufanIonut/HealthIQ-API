@@ -1,4 +1,4 @@
-﻿namespace ITFestHackathon_API.Responses
+﻿namespace HealthIQ.Responses
 {
     public class GetIngredientTypeResponse
     {

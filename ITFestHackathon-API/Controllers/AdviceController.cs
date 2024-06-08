@@ -1,8 +1,8 @@
-﻿using ITFestHackathon_API.Responses;
-using ITFestHackathon_API.Interfaces;
+﻿using HealthIQ.Responses;
+using HealthIQ.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
-namespace ITFestHackathon_API.Controllers
+namespace HealthIQ.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]

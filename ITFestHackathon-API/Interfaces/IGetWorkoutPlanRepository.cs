@@ -1,7 +1,7 @@
-﻿using ITFestHackathon_API.DTOs;
-using ITFestHackathon_API.DTOs.Update;
+﻿using HealthIQ.DTOs;
+using HealthIQ.DTOs.Update;
 
-namespace ITFestHackathon_API.Interfaces
+namespace HealthIQ.Interfaces
 {
     public interface IGetWorkoutPlanRepository
     {

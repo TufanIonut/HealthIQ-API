@@ -1,4 +1,4 @@
-﻿namespace ITFestHackathon_API.Interfaces
+﻿namespace HealthIQ.Interfaces
 {
     public interface IDeleteIngredientTypeRepository
     {

@@ -1,4 +1,4 @@
-﻿namespace ITFestHackathon_API.Entities
+﻿namespace HealthIQ.Entities
 {
     public class User
     {
@@ -7,7 +7,7 @@
         public string Password { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public string BirthDate { get; set; }
+        public DateTime BirthDate { get; set; }
         public float Weight { get; set; }
         public float Height { get; set; }
         public string FitLevel { get; set; }

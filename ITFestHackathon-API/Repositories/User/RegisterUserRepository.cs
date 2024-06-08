@@ -1,9 +1,9 @@
 ﻿using System.Data;
 using Dapper;
-using ITFestHackathon_API.DTOs;
-using ITFestHackathon_API.Interfaces;
+using HealthIQ.DTOs;
+using HealthIQ.Interfaces;
 
-namespace ITFestHackathon_API.Repositories.User
+namespace HealthIQ.Repositories.User
 {
     public class RegisterUserRepository : IRegisterUserRepository
     {
@@ -15,14 +15,22 @@ namespace ITFestHackathon_API.Repositories.User
 
         public async Task<int> RegisterUserAsyncRepo(UserCredentialsDTO userCredentialsDTO)
         {
-            var parameters = new DynamicParameters();
-            parameters.Add("@Email", userCredentialsDTO.Email);
-            parameters.Add("@Password", userCredentialsDTO.Password);
-            parameters.Add("UserID", dbType: DbType.Int32, direction: ParameterDirection.Output);
-            using (var connection = _dbConnectionFactory.ConnectToDataBase())
+            try
             {
-                await connection.ExecuteAsync("RegisterUser", parameters, commandType: CommandType.StoredProcedure);
-                return parameters.Get<int>("UserID");
+                var parameters = new DynamicParameters();
+                parameters.Add("@Email", userCredentialsDTO.Email);
+                parameters.Add("@Password", userCredentialsDTO.Password);
+                parameters.Add("UserID", dbType: DbType.Int32, direction: ParameterDirection.Output);
+                using (var connection = _dbConnectionFactory.ConnectToDataBase())
+                {
+                    await connection.ExecuteAsync("RegisterUser", parameters, commandType: CommandType.StoredProcedure);
+                    return parameters.Get<int>("UserID");
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
             }
         }
     }

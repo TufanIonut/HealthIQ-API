@@ -1,4 +1,4 @@
-﻿namespace ITFestHackathon_API.DTOs
+﻿namespace HealthIQ.DTOs
 {
     public class WaterConsumptionDTO
     {

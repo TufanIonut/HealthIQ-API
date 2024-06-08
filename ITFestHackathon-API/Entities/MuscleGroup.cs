@@ -1,4 +1,4 @@
-﻿namespace ITFestHackathon_API.Entities
+﻿namespace HealthIQ.Entities
 {
     public class MuscleGroup
     {

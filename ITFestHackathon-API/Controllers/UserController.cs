@@ -1,8 +1,8 @@
-﻿using ITFestHackathon_API.DTOs;
-using ITFestHackathon_API.Interfaces;
+﻿using HealthIQ.DTOs;
+using HealthIQ.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
-namespace ITFestHackathon_API.Controllers
+namespace HealthIQ.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
@@ -74,7 +74,7 @@ namespace ITFestHackathon_API.Controllers
             switch(userID)
             {
                 case 0:
-                    return Ok(userID + " Admin");
+                    return Ok(userID);
                 case -1:
                     return BadRequest("Login failed");
                 default:

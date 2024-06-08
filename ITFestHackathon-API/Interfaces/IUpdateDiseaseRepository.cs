@@ -1,6 +1,6 @@
-﻿using ITFestHackathon_API.DTOs.Update;
+﻿using HealthIQ.DTOs.Update;
 
-namespace ITFestHackathon_API.Interfaces
+namespace HealthIQ.Interfaces
 {
     public interface IUpdateDiseaseRepository
     {

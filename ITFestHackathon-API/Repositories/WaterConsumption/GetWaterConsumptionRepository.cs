@@ -1,12 +1,12 @@
 ﻿using System.Data;
 using System.Linq.Expressions;
 using Dapper;
-using ITFestHackathon_API.DTOs;
-using ITFestHackathon_API.DTOs.Update;
-using ITFestHackathon_API.Interfaces;
-using ITFestHackathon_API.Responses;
+using HealthIQ.DTOs;
+using HealthIQ.DTOs.Update;
+using HealthIQ.Interfaces;
+using HealthIQ.Responses;
 
-namespace ITFestHackathon_API.Repositories.WaterConsumption
+namespace HealthIQ.Repositories.WaterConsumption
 {
     public class GetWaterConsumptionRepository : IGetWaterConsumptionRepository
     {

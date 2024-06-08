@@ -1,8 +1,8 @@
 ﻿using Dapper;
-using ITFestHackathon_API.Interfaces;
+using HealthIQ.Interfaces;
 using System.Data;
 
-namespace ITFestHackathon_API.Repositories.Ingredients
+namespace HealthIQ.Repositories.Ingredients
 {
     public class DeleteIngredientRepository : IDeleteIngredientRepository
     {

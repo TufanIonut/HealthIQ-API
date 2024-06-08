@@ -1,7 +1,7 @@
-﻿using ITFestHackathon_API.DTOs;
-using ITFestHackathon_API.Responses;
+﻿using HealthIQ.DTOs;
+using HealthIQ.Responses;
 
-namespace ITFestHackathon_API.Interfaces
+namespace HealthIQ.Interfaces
 {
     public interface IGetUserInfoRepository
     {

@@ -1,19 +1,19 @@
-﻿using ITFestHackathon_API.Infrastructure;
-using ITFestHackathon_API.Interfaces;
-using ITFestHackathon_API.Repositories.Ingredients;
-using ITFestHackathon_API.Repositories.IngredientsType;
-using ITFestHackathon_API.Repositories.Recipe;
-using ITFestHackathon_API.Repositories.RecipeIngredients;
-using ITFestHackathon_API.Repositories.Disease;
-using ITFestHackathon_API.Repositories.User;
-using ITFestHackathon_API.Repositories.Diseases;
-using ITFestHackathon_API.Repositories.Advice;
-using ITFestHackathon_API.Repositories.WaterConsumption;
-using ITFestHackathon_API.Repositories.CalorieIntake;
-using ITFestHackathon_API.Repositories.Exercise;
-using ITFestHackathon_API.Repositories.Workout;
+﻿using HealthIQ.Infrastructure;
+using HealthIQ.Interfaces;
+using HealthIQ.Repositories.Ingredients;
+using HealthIQ.Repositories.IngredientsType;
+using HealthIQ.Repositories.Recipe;
+using HealthIQ.Repositories.RecipeIngredients;
+using HealthIQ.Repositories.Disease;
+using HealthIQ.Repositories.User;
+using HealthIQ.Repositories.Diseases;
+using HealthIQ.Repositories.Advice;
+using HealthIQ.Repositories.WaterConsumption;
+using HealthIQ.Repositories.CalorieIntake;
+using HealthIQ.Repositories.Exercise;
+using HealthIQ.Repositories.Workout;
 
-namespace ITFestHackathon_API
+namespace HealthIQ
 {
     public static class MyConfigServiceCollection
     {
@@ -74,11 +74,6 @@ namespace ITFestHackathon_API
             //--------------------------------------------------------------------
             //WORKOUT PLAN
             services.AddScoped<IGetWorkoutPlanRepository, GetWorkoutPlanRepository>();
-
-
-
-
-
 
             return services;
         }

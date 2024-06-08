@@ -9,7 +9,7 @@
     }
   },
   "profiles": {
-    "ITFestHackathon_API": {
+    "HealthIQ": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,
