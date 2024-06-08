@@ -15,10 +15,11 @@ namespace HealthIQ.Controllers
         private readonly IUpdateUserPointsRepository _updateUserPointsRepository;
         private readonly IGetCalorieIntakeRepository _getCalorieIntakeRepository;
         private readonly IGetUserInfoRepository _getUserInfoRepository;
+        private readonly IGetUserWeightsRepository _getUserWeightsRepository;
 
         public UserController(IRegisterUserRepository registerUserRepository, ILoginUserRepository loginUserRepository,
             IInsertUserInformationRepository insertUserInformationRepository, IUpdateUserPointsRepository updateUserPointsRepository,
-            IGetCalorieIntakeRepository getCalorieIntakeRepository, IGetUserInfoRepository getUserInfoRepository)
+            IGetCalorieIntakeRepository getCalorieIntakeRepository, IGetUserInfoRepository getUserInfoRepository, IGetUserWeightsRepository getUserWeightsRepository)
         {
             _registerUserRepository = registerUserRepository;
             _loginUserRepository = loginUserRepository;
@@ -26,6 +27,7 @@ namespace HealthIQ.Controllers
             _updateUserPointsRepository = updateUserPointsRepository;
             _getCalorieIntakeRepository = getCalorieIntakeRepository;
             _getUserInfoRepository = getUserInfoRepository;
+            _getUserWeightsRepository = getUserWeightsRepository;
         }
 
         [HttpGet]
@@ -110,6 +112,17 @@ namespace HealthIQ.Controllers
             {
                 return BadRequest("Update failed");
             }
+        }
+        [HttpGet]
+        [Route("GetUserWeights")]
+        public async Task<IActionResult> GetUserWeights(int idUser)
+        {
+            var result = await _getUserWeightsRepository.GetUserWeightsAsyncRepo(idUser);
+
+            if (result == null)
+                return BadRequest();
+
+            return Ok(result);
         }
     }
 }

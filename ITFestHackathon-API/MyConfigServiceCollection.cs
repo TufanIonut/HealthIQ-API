@@ -28,6 +28,7 @@ namespace HealthIQ
             services.AddScoped<IInsertUserInformationRepository, InsertUserInformationRepository>();
             services.AddScoped<IUpdateUserPointsRepository, UpdateUserPointsRepository>();
             services.AddScoped<IGetUserInfoRepository, GetUserInfoRepository>();
+            services.AddScoped<IGetUserWeightsRepository, GetUserWeightsRepository>();
             //--------------------------------------------------------------------
             //INGREDIENTS
             services.AddScoped<IAddIngredientRepository, AddIngredientRepository>();
