@@ -42,6 +42,17 @@ namespace HealthIQ.Controllers
 
             return Ok(result);
         }
+        [HttpGet]
+        [Route("GetRecipesForUser")]
+        public async Task<IActionResult> GetRecipesForUser(  int idUser)
+        {
+            var result = await _getRecipeRepository.GetRecipesForUser(idUser);
+
+            if (result == null)
+                return BadRequest();
+
+            return Ok(result);
+        }
 
         [HttpDelete]
         [Route("DeleteRecipe")]

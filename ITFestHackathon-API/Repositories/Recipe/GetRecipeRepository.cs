@@ -22,5 +22,15 @@ namespace HealthIQ.Repositories.Recipe
                 return recipes;
             }
         }
+        public async Task<IEnumerable<GetRecipeResponse>> GetRecipesForUser(int idUser)
+        {
+            var parameters = new DynamicParameters();
+            parameters.Add("@IdUser", idUser);
+            using (var connection = _dbConnectionFactory.ConnectToDataBase())
+            {
+                var recipes = await connection.QueryAsync<GetRecipeResponse>("GetAllRecipesForUser", parameters, commandType: CommandType.StoredProcedure);
+                return recipes;
+            }
+        }
     }
 }

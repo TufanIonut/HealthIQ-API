@@ -21,5 +21,15 @@ namespace HealthIQ.Repositories.RecipeIngredients
                 return recipeIngredients;
             }
         }
+        public async Task<IEnumerable<RecipesJoinIngredientsDTO>> GetRecipeIngredientsForUserAsyncRepo(int idUser)
+        {
+            var parameters = new DynamicParameters();
+            parameters.Add("@IdUser", idUser);
+            using (var connect = _connectionFactory.ConnectToDataBase())
+            {
+                var recipeIngredients = await connect.QueryAsync<RecipesJoinIngredientsDTO>("GetRecipesWithIngredientsForUser", parameters, commandType: CommandType.StoredProcedure);
+                return recipeIngredients;
+            }
+        }
     }
 }

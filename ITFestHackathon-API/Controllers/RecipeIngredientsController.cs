@@ -29,5 +29,16 @@ namespace HealthIQ.Controllers
 
             return Ok(result);
         }
+        [HttpGet]
+        [Route("GetRecipeJoinIngredientsForUser")]
+        public async Task<IActionResult> GetIngredientsForUser(int idUser)
+        {
+            var result = await _getRecipeIngredientsRepository.GetRecipeIngredientsForUserAsyncRepo(idUser);
+
+            if (result == null)
+                return BadRequest();
+
+            return Ok(result);
+        }
     }
 }
