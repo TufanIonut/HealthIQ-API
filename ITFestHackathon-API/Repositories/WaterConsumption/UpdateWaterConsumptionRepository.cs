@@ -15,6 +15,7 @@ namespace HealthIQ.Repositories.WaterConsumption
 
         public async Task<int> UpdateWaterConsumptionAsyncRepo(UpdateWaterConsumptionDTO waterConsumption)
         {
+            
             var parameters = new DynamicParameters();
             parameters.Add("@IdUser", waterConsumption.IdUser);
             parameters.Add("@Date", waterConsumption.Date);
