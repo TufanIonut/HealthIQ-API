@@ -15,10 +15,11 @@ namespace HealthIQ.Repositories.WaterConsumption
 
         public async Task<int> AddWaterConsumptionAsyncRepo(WaterConsumptionDTO waterConsumptionDTO)
         {
+            string Date = waterConsumptionDTO.Date.ToString("yyyy-MM-dd");
             var parameters = new DynamicParameters();
             parameters.Add("@IdUser", waterConsumptionDTO.IdUser);
             parameters.Add("@WaterGlasses", waterConsumptionDTO.WaterGlasses);
-            parameters.Add("@Date", waterConsumptionDTO.Date);
+            parameters.Add("@Date", Date);
             parameters.Add("Success", dbType: DbType.Int32, direction: ParameterDirection.Output);
 
             using (var connection = _dbConnectionFactory.ConnectToDataBase())

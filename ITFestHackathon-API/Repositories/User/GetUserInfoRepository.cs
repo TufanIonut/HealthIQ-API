@@ -22,6 +22,7 @@ namespace HealthIQ.Repositories.User
             using (var connection = _connectionFactory.ConnectToDataBase())
             {
                 var userInfo = await connection.QueryAsync<GetUserInfoResponse>("GetUserInfo", parameters, commandType: CommandType.StoredProcedure);
+
                 return userInfo;
             }
         }

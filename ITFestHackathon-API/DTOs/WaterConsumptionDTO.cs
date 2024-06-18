@@ -4,6 +4,6 @@
     {
         public int IdUser { get; set; }
         public int WaterGlasses { get; set; }
-        public DateTime Date { get; set; }
+        public DateOnly Date { get; set; }
     }
 }

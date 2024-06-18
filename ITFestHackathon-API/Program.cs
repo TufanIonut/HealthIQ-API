@@ -10,6 +10,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddMyDependencyGroup();
+//cors policy
 builder.Services.AddCors(options =>
 {
     options.AddDefaultPolicy(policyBuilder =>
@@ -31,6 +32,7 @@ builder.Services.AddCors(options =>
         .AllowAnyHeader();
     });
 });
+//cors policy
 builder.Services.AddCors(options => options.AddPolicy(name: "FrontendUI",
 
     policy =>
@@ -42,6 +44,11 @@ builder.Services.AddCors(options => options.AddPolicy(name: "FrontendUI",
     }
 
 ));
+//json converter
+builder.Services.AddControllers().AddJsonOptions(options =>
+{
+    options.JsonSerializerOptions.Converters.Add(new DateOnlyJsonConverter());
+});
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
