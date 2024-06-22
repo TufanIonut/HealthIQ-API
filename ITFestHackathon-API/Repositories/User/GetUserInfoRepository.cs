@@ -26,5 +26,6 @@ namespace HealthIQ.Repositories.User
                 return userInfo;
             }
         }
+        
     }
 }

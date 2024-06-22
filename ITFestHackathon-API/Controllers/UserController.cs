@@ -1,5 +1,6 @@
 ﻿using HealthIQ.DTOs;
 using HealthIQ.Interfaces;
+using HealthIQ.Requests;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HealthIQ.Controllers
@@ -123,6 +124,20 @@ namespace HealthIQ.Controllers
                 return BadRequest();
 
             return Ok(result);
+        }
+        [HttpPost]
+        [Route("InsertWeightHistory")]
+        public async Task<IActionResult> InsertWeightHistory([FromBody] UserWeightRequest userWeightRequest)
+        {
+            var success = await _insertUserInformationRepository.InsertWeightHistory(userWeightRequest);
+            if (success == 1)
+            {
+                return Ok(success);
+            }
+            else
+            {
+                return BadRequest("Insert failed");
+            }
         }
     }
 }

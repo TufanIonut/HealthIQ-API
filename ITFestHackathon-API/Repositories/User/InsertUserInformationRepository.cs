@@ -1,6 +1,7 @@
 ﻿using Dapper;
 using HealthIQ.DTOs;
 using HealthIQ.Interfaces;
+using HealthIQ.Requests;
 using System.Data;
 
 
@@ -32,6 +33,20 @@ namespace HealthIQ.Repositories.User
             using (var connection = _dbConnectionFactory.ConnectToDataBase())
             {
                 await connection.ExecuteAsync("InsertUserInformation", parameters, commandType: CommandType.StoredProcedure);
+                var result = parameters.Get<int>("Success");
+                return result;
+            }
+        }
+        public async Task<int> InsertWeightHistory(UserWeightRequest userWeightRequest)
+        {
+            var parameters = new DynamicParameters();
+            parameters.Add("@IdUser", userWeightRequest.IdUser);
+            parameters.Add("@Weight", userWeightRequest.Weight);
+            parameters.Add("@Date", userWeightRequest.Date);
+            parameters.Add("Success", dbType: DbType.Int32, direction: ParameterDirection.Output);
+            using (var connection = _dbConnectionFactory.ConnectToDataBase())
+            {
+                await connection.ExecuteAsync("InsertUserWeightHistory", parameters, commandType: CommandType.StoredProcedure);
                 var result = parameters.Get<int>("Success");
                 return result;
             }
