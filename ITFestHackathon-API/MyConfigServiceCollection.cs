@@ -12,6 +12,7 @@ using HealthIQ.Repositories.WaterConsumption;
 using HealthIQ.Repositories.CalorieIntake;
 using HealthIQ.Repositories.Exercise;
 using HealthIQ.Repositories.Workout;
+using HealthIQ.Services;
 
 namespace HealthIQ
 {
@@ -75,7 +76,9 @@ namespace HealthIQ
             //--------------------------------------------------------------------
             //WORKOUT PLAN
             services.AddScoped<IGetWorkoutPlanRepository, GetWorkoutPlanRepository>();
-
+            //--------------------------------------------------------------------
+            //EMAIL
+            services.AddScoped<IEmailService, EmailService>();
             return services;
         }
     }
