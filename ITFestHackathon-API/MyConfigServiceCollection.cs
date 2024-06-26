@@ -79,6 +79,9 @@ namespace HealthIQ
             //--------------------------------------------------------------------
             //EMAIL
             services.AddScoped<IEmailService, EmailService>();
+            //--------------------------------------------------------------------
+            //GENETIC 
+            services.AddScoped<IGeneticService, GeneticService>();
             return services;
         }
     }
