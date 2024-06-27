@@ -27,7 +27,7 @@ namespace HealthIQ.Controllers
         }
 
         [HttpGet]
-        [Route("GetDiseases")]
+        [Route("GetCondition")]
         public async Task<IActionResult> GetDiseases()
         {
             var result = await _getDiseasesRepository.GetDiseasesAsyncRepo();
@@ -39,7 +39,7 @@ namespace HealthIQ.Controllers
         }
 
         [HttpPost]
-        [Route("AddDisease")]
+        [Route("AddCondition")]
         public async Task<IActionResult> AddDisease([FromBody] DiseaseDTO diseaseDTO)
         {
             var result = await _addDiseaseRepository.AddDiseaseAsyncRepo(diseaseDTO);
@@ -51,7 +51,7 @@ namespace HealthIQ.Controllers
         }
 
         [HttpDelete]
-        [Route("DeleteDisease")]
+        [Route("DeleteCondition")]
         public async Task<IActionResult> DeleteDiseaseAsync([FromBody] int DiseaseId)
         {
             var success = await _deleteDiseaseRepository.DeleteDiseaseAsyncRepo(DiseaseId);
@@ -65,7 +65,7 @@ namespace HealthIQ.Controllers
             }
         }
         [HttpPatch]
-        [Route("UpdateDisease")]
+        [Route("UpdateCondition")]
         public async Task<IActionResult> UpdateDiseaseAsync([FromBody] UpdateDiseaseDTO updatediseaseDTO)
         {
             var success = await _updateDiseaseRepository.UpdateDiseaseAsyncRepo(updatediseaseDTO);
