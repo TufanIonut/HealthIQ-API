@@ -4,6 +4,9 @@
     {
         public string Name { get; set; } 
         public string Difficulty { get; set; } 
+        public int Sets { get; set; }
+        public int Reps { get; set; }
+        public int RestBetweenSets { get; set; }
     }
     public class Workout
     {
@@ -111,12 +114,13 @@ Cable-Rows Advanced Back Upper back
 ";
 
             var user = new User(172, 52, "Female", 4, new DateTime(1990, 1, 1), "Intermediate");
-
             int populationSize = 100;
             int numGenerations = 50;
-            int threshold = 10;
+            var sets = 3;
+            var reps = 12;
+            var restBetweenSets = 3;
             List<Workout> workouts = new List<Workout>();
-            var bestWorkoutPlan = GenerateWorkoutPlan(user, exerciseList, populationSize, numGenerations, threshold);
+            var bestWorkoutPlan = GenerateWorkoutPlan(user, exerciseList, populationSize, numGenerations);
 
             for (int day = 0; day < bestWorkoutPlan.Count; day++)
             {
@@ -125,7 +129,7 @@ Cable-Rows Advanced Back Upper back
                 foreach (var exerciseIndex in bestWorkoutPlan[day])
                 {
                     var exercise = ParseExerciseList(exerciseList)[exerciseIndex];
-                    workoutsExerices.Add(new WorkoutExercises { Name = exercise.Name, Difficulty = exercise.Difficulty });
+                    workoutsExerices.Add(new WorkoutExercises { Name = exercise.Name, Difficulty = exercise.Difficulty,Sets=sets,Reps=reps,RestBetweenSets=restBetweenSets });
                 }
 
                 workouts.Add(new Workout { Day = $"Day {day + 1}", Exercises = workoutsExerices });
@@ -342,7 +346,7 @@ Cable-Rows Advanced Back Upper back
             return offspring;
         }
 
-        static List<List<int>> GenerateWorkoutPlan(User user, string exerciseList, int populationSize, int numGenerations, int threshold)
+        static List<List<int>> GenerateWorkoutPlan(User user, string exerciseList, int populationSize, int numGenerations )
         {
             var exercises = ParseExerciseList(exerciseList);
             var population = InitializePopulation(populationSize, exercises.Count, user.TrainingFrequency);
@@ -351,12 +355,6 @@ Cable-Rows Advanced Back Upper back
             {
                 var fitnessScores = population.Select(workoutPlan => FitnessFunction(workoutPlan, user, exercises)).ToList();
                 var bestFitness = fitnessScores.Max();
-
-                if (bestFitness >= threshold)
-                {
-                    return population[fitnessScores.IndexOf(bestFitness)];
-                }
-
                 var parents = Selection(population, fitnessScores);
                 var offspring = Crossover(parents);
                 population = Mutation(offspring, exercises.Count);

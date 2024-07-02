@@ -13,6 +13,7 @@ using HealthIQ.Repositories.CalorieIntake;
 using HealthIQ.Repositories.Exercise;
 using HealthIQ.Repositories.Workout;
 using HealthIQ.Services;
+using HealthIQ.Repositories;
 
 namespace HealthIQ
 {
@@ -82,6 +83,9 @@ namespace HealthIQ
             //--------------------------------------------------------------------
             //GENETIC 
             services.AddScoped<IGeneticService, GeneticService>();
+            //--------------------------------------------------------------------
+            //Supplements
+            services.AddScoped<ISupplementsRepository, SupplementsRepository>();
             return services;
         }
     }
