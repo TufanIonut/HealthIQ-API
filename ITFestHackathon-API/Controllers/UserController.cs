@@ -84,7 +84,20 @@ namespace HealthIQ.Controllers
                     return Ok(userID);
             }
         }
-
+        [HttpPost]
+        [Route("ChangePassword")]
+        public async Task<IActionResult> ChangePasswordAsync([FromBody] UserCredentialsDTO userCredentialsDTO)
+        {
+            var success = await _loginUserRepository.ChangePassword(userCredentialsDTO);
+            if (success == 1)
+            {
+                return Ok(success);
+            }
+            else
+            {
+                return BadRequest("Change password failed");
+            }
+        }
         [HttpPatch]
         [Route("UpdateUserInfo")]
         public async Task<IActionResult> UpdateUserInfoAsync([FromBody] UserInformationDTO userInformationDTO)

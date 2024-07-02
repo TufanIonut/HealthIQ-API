@@ -1,4 +1,5 @@
-﻿using HealthIQ.Repositories;
+﻿using HealthIQ.DTOs;
+using HealthIQ.Repositories;
 using HealthIQ.Responses;
 using Microsoft.AspNetCore.Mvc;
 

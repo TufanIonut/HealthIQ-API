@@ -1,11 +1,12 @@
 ﻿
 using Dapper;
+using HealthIQ.DTOs;
 using HealthIQ.Interfaces;
 using HealthIQ.Responses;
 using System.Data;
 
 namespace HealthIQ.Repositories
-{ 
+{
     public class SupplementsRepository : ISupplementsRepository
     {
 

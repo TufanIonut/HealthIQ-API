@@ -1,4 +1,6 @@
 ﻿using System.Data;
+using System.Security.Cryptography;
+using System.Text;
 using Dapper;
 using HealthIQ.DTOs;
 using HealthIQ.Interfaces;
@@ -17,6 +19,7 @@ namespace HealthIQ.Repositories.User
         {
             try
             {
+                userCredentialsDTO.Password = HashPassword(userCredentialsDTO.Password);
                 var parameters = new DynamicParameters();
                 parameters.Add("@Email", userCredentialsDTO.Email);
                 parameters.Add("@Password", userCredentialsDTO.Password);
@@ -31,6 +34,19 @@ namespace HealthIQ.Repositories.User
             {
 
                 throw ex;
+            }
+        }
+        private string HashPassword(string pasword)
+        {
+            using (SHA256 sha256 = SHA256.Create())
+            {
+                byte[] bytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(pasword));
+                StringBuilder builder = new StringBuilder();
+                for (int i = 0; i < bytes.Length; i++)
+                {
+                    builder.Append(bytes[i].ToString("x2"));
+                }
+                return builder.ToString();
             }
         }
     }

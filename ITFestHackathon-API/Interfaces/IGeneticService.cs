@@ -1,4 +1,6 @@
-﻿namespace HealthIQ
+﻿using HealthIQ.Services;
+
+namespace HealthIQ
 {
     public interface IGeneticService
     {

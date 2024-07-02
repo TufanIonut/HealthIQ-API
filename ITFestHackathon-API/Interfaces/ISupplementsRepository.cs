@@ -1,4 +1,5 @@
-﻿using HealthIQ.Responses;
+﻿using HealthIQ.DTOs;
+using HealthIQ.Responses;
 
 namespace HealthIQ.Repositories
 {
