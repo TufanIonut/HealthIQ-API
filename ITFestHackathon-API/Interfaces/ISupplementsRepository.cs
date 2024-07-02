@@ -7,6 +7,7 @@ namespace HealthIQ.Repositories
     {
         Task<IEnumerable<PillsResponse>> GetPills();
         Task<bool> insertMeds(MedsDTO meds);
-        Task<IEnumerable<MedsDTO>> GetMeds();
+        Task<IEnumerable<MedsResponse>> GetMeds();
+        Task<int> DeleteMeds(int id);
     }
 }

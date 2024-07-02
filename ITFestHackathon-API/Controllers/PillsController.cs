@@ -38,10 +38,20 @@ namespace HealthIQ.Controllers
         }
         [HttpGet]
         [Route("GetMeds")]
-        public async Task<IEnumerable<MedsDTO>> GetMeds()
+        public async Task<IEnumerable<MedsResponse>> GetMeds()
         {
             return await _supplementsRepository.GetMeds();
         }
-
+        [HttpDelete]
+        [Route("DeleteMeds")]
+        public async Task<IActionResult> DeleteMeds(int id)
+        {
+            var result = await _supplementsRepository.DeleteMeds(id);
+            if (result == 1)
+            {
+                return Ok();
+            }
+            return BadRequest();
+        }
     }
 }
