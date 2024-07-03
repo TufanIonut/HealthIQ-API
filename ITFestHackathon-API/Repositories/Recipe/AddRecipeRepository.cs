@@ -20,6 +20,7 @@ namespace HealthIQ.Repositories.Recipe
             parameters.Add("@RecipeInstructions", recipe.RecipeInstructions);
             parameters.Add("@CookingTime",recipe.CookingTime);
             parameters.Add("@PhotoURL", recipe.Photo_URL);
+            parameters.Add("@IdUser", recipe.IdUser);
             parameters.Add("Success", dbType: DbType.Int32, direction: ParameterDirection.Output);
 
             using (var connection = _dbConnectionFactory.ConnectToDataBase())
