@@ -41,7 +41,18 @@ namespace HealthIQ.Controllers
                 return BadRequest();
 
             return Ok(result);
-        } 
+        }
+        [HttpGet]
+        [Route("GetAllUsers")]
+        public async Task<IActionResult> GetAllUsers()
+        {
+            var result = await _getUserInfoRepository.GetAllUsersAsyncRepo();
+
+            if (result == null)
+                return BadRequest();
+
+            return Ok(result);
+        }
 
         [HttpGet]
         [Route("GetRecommendedCalorieIntake")]

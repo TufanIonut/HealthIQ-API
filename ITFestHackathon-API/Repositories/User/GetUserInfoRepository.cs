@@ -26,6 +26,15 @@ namespace HealthIQ.Repositories.User
                 return userInfo;
             }
         }
+        public async Task<IEnumerable<AllUsersResponse>> GetAllUsersAsyncRepo()
+        {
+           
+            using (var connection = _connectionFactory.ConnectToDataBase())
+            {
+                var allUsers= await connection.QueryAsync<AllUsersResponse>("GetAllUsers", commandType: CommandType.StoredProcedure);
+                return allUsers;
+            }        
+        }
         
     }
 }

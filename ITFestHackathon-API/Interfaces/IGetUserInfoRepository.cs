@@ -6,5 +6,6 @@ namespace HealthIQ.Interfaces
     public interface IGetUserInfoRepository
     {
         Task<IEnumerable<GetUserInfoResponse>> GetUserInfoAsyncRepo(int idUser);
+        Task<IEnumerable<AllUsersResponse>> GetAllUsersAsyncRepo();
     }
 }
