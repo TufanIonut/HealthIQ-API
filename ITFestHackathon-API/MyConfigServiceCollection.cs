@@ -14,6 +14,7 @@ using HealthIQ.Repositories.Exercise;
 using HealthIQ.Repositories.Workout;
 using HealthIQ.Services;
 using HealthIQ.Repositories;
+using HealthIQ.Repositories.Reviews;
 
 namespace HealthIQ
 {
@@ -86,6 +87,9 @@ namespace HealthIQ
             //--------------------------------------------------------------------
             //Supplements
             services.AddScoped<ISupplementsRepository, SupplementsRepository>();
+            //--------------------------------------------------------------------
+            //Reviews
+            services.AddScoped<IReviewsRepository, ReviewsRepository>();
             return services;
         }
     }
