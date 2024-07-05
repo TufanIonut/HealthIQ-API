@@ -40,5 +40,17 @@ namespace HealthIQ.Repositories.Reviews
                 return await connection.QueryAsync<UserReviewRespose>("GetUserReviews", parameters, commandType: CommandType.StoredProcedure);
             }
         }
+        public async Task<int> DeleteReview (int idReview)
+        {
+            var parameters = new DynamicParameters();
+            parameters.Add("@@IdUserReview", idReview);
+            parameters.Add("@Success", dbType: DbType.Int32, direction: ParameterDirection.Output);
+            using (var connection = _dbConnectionFactory.ConnectToDataBase())
+            {
+               await connection.ExecuteAsync("DeleteReview", parameters, commandType: CommandType.StoredProcedure);
+                var result = parameters.Get<int>("@Success");
+                return result;
+            }
+        }
     }
 }

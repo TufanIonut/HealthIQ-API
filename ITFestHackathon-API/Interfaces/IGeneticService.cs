@@ -4,6 +4,6 @@ namespace HealthIQ
 {
     public interface IGeneticService
     {
-        List<Workout> GenerateWorkoutPlan();
+        List<Workout> GenerateWorkoutPlan(User user);
     }
 }

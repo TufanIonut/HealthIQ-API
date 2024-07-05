@@ -31,33 +31,13 @@ namespace HealthIQ
         }
     }
 
-    public class User
-    {
-        public int Height { get; }
-        public int Weight { get; }
-        public string Gender { get; }
-        public int TrainingFrequency { get; }
-        public DateTime BirthDate { get; }
-        public string FitLevel { get; }
-
-        public User(int height, int weight, string gender, int trainingFrequency, DateTime birthDate, string fitLevel)
-        {
-            Height = height;
-            Weight = weight;
-            Gender = gender;
-            TrainingFrequency = trainingFrequency;
-            BirthDate = birthDate;
-            FitLevel = fitLevel;
-        }
-    }
+    
     public class GeneticService : IGeneticService
     {
-        public List<Workout> GenerateWorkoutPlan()
+        public List<Workout> GenerateWorkoutPlan(User user)
         {
             ExerciseList List = new ExerciseList();
             string exerciseList = List.GetExerciseList();
-
-            var user = new User(172, 52, "Female", 4, new DateTime(1990, 1, 1), "Intermediate");
             int populationSize = 100;
             int numGenerations = 50;
             var sets = 3;

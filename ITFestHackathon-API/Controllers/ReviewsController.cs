@@ -39,5 +39,16 @@ namespace HealthIQ.Controllers
             }
             return BadRequest();
         }
+        [HttpDelete]
+        [Route("DeleteReview")]
+        public async Task<IActionResult> DeleteReview(int id)
+        {
+            var result = await _reviewsRepository.DeleteReview(id);
+            if (result == 1)
+            {
+                return Ok();
+            }
+            return BadRequest();
+        }
     }
 }

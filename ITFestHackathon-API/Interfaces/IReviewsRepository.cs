@@ -8,5 +8,6 @@ namespace HealthIQ.Interfaces
         Task<int> AddReviewAsync(AddReviewRequest addReviewRequest);
         Task<IEnumerable<ReviewsResponse>> GetReviewsAsync();
         Task<IEnumerable<UserReviewRespose>> GetUserReviewsAsync(int idUser);
+        Task<int> DeleteReview(int idReview);
     }
 }

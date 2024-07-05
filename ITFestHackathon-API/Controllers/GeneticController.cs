@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using HealthIQ.Services;
+using Microsoft.AspNetCore.Mvc;
 
 namespace HealthIQ.Controllers
 {
@@ -13,10 +14,10 @@ namespace HealthIQ.Controllers
             _geneticService = geneticService;
         }
 
-        [HttpGet]
-        public IActionResult Get()
+        [HttpPost]
+        public IActionResult Get(User user)
         {
-            return Ok(_geneticService.GenerateWorkoutPlan());
+            return Ok(_geneticService.GenerateWorkoutPlan(user));
         }
 
     }
