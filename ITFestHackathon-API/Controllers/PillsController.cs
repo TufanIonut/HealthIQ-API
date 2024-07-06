@@ -53,5 +53,16 @@ namespace HealthIQ.Controllers
             }
             return BadRequest();
         }
+        [HttpPatch]
+        [Route("ToogleTaken")]
+        public async Task<IActionResult> ToogleTaken(int id)
+        {
+            var result = await _supplementsRepository.ToogleTaken(id);
+            if (result == 1)
+            {
+                return Ok();
+            }
+            return BadRequest();
+        }
     }
 }

@@ -61,5 +61,17 @@ namespace HealthIQ.Repositories
                 return result;
             }
         }
+        public async Task<int> ToogleTaken(int id)
+        {
+            var parameters = new DynamicParameters();
+            parameters.Add("@IdMedication", id);
+            parameters.Add("@Success", dbType: DbType.Int32, direction: ParameterDirection.Output);
+            using (var connection = _dbConnectionFactory.ConnectToDataBase())
+            {
+                await connection.ExecuteAsync("ToggleMedicationTaken", parameters, commandType: CommandType.StoredProcedure);
+                var result = parameters.Get<int>("Success");
+                return result;
+            }
+        }
     }
 }
