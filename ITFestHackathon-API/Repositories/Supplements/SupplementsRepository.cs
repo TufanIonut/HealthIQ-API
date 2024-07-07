@@ -2,6 +2,7 @@
 using Dapper;
 using HealthIQ.DTOs;
 using HealthIQ.Interfaces;
+using HealthIQ.Requests;
 using HealthIQ.Responses;
 using System.Data;
 
@@ -69,6 +70,27 @@ namespace HealthIQ.Repositories
             using (var connection = _dbConnectionFactory.ConnectToDataBase())
             {
                 await connection.ExecuteAsync("ToggleMedicationTaken", parameters, commandType: CommandType.StoredProcedure);
+                var result = parameters.Get<int>("Success");
+                return result;
+            }
+        }
+        public async Task<IEnumerable<ManufacturerResponse>> GetManufacturers()
+        {
+            using (var connection = _dbConnectionFactory.ConnectToDataBase())
+            {
+                var result = await connection.QueryAsync<ManufacturerResponse>("GetManufacturers", commandType: CommandType.StoredProcedure);
+                return result;
+            }
+        }
+        public async Task<int> InsertPillAsync(AddPillRequest addPillRequest)
+        {
+            var parameters = new DynamicParameters();
+            parameters.Add("@PillName", addPillRequest.PillName);
+            parameters.Add("@Manufacturer_Name", addPillRequest.Manufacturer_Name);
+            parameters.Add("@Success", dbType: DbType.Int32, direction: ParameterDirection.Output);
+            using (var connection = _dbConnectionFactory.ConnectToDataBase())
+            {
+                await connection.ExecuteAsync("InsertPill", parameters, commandType: CommandType.StoredProcedure);
                 var result = parameters.Get<int>("Success");
                 return result;
             }

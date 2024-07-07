@@ -1,5 +1,6 @@
 ﻿using HealthIQ.DTOs;
 using HealthIQ.Repositories;
+using HealthIQ.Requests;
 using HealthIQ.Responses;
 using Microsoft.AspNetCore.Mvc;
 
@@ -64,5 +65,23 @@ namespace HealthIQ.Controllers
             }
             return BadRequest();
         }
+        [HttpGet]
+        [Route("GetManufacturers")]
+        public async Task<IEnumerable<ManufacturerResponse>> GetManufacturers()
+        {
+            return await _supplementsRepository.GetManufacturers();
+        }
+        [HttpPost]
+        [Route("InsertPill")]
+        public async Task<IActionResult> InsertPillAsync(AddPillRequest addPillRequest)
+        {
+            var result = await _supplementsRepository.InsertPillAsync(addPillRequest);
+            if (result == 1)
+            {
+                return Ok();
+            }
+            return BadRequest();
+        }
+
     }
 }

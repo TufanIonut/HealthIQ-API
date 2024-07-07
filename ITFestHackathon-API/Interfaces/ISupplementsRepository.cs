@@ -1,4 +1,5 @@
 ﻿using HealthIQ.DTOs;
+using HealthIQ.Requests;
 using HealthIQ.Responses;
 
 namespace HealthIQ.Repositories
@@ -10,5 +11,7 @@ namespace HealthIQ.Repositories
         Task<IEnumerable<MedsResponse>> GetMeds();
         Task<int> DeleteMeds(int id);
         Task<int> ToogleTaken(int id);
+        Task<IEnumerable<ManufacturerResponse>> GetManufacturers();
+        Task<int> InsertPillAsync(AddPillRequest addPillRequest);
     }
 }

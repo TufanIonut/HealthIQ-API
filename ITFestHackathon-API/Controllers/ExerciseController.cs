@@ -1,6 +1,7 @@
 ﻿using HealthIQ.DTOs;
 using HealthIQ.DTOs.Update;
 using HealthIQ.Interfaces;
+using HealthIQ.Requests;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HealthIQ.Controllers
@@ -27,6 +28,28 @@ namespace HealthIQ.Controllers
                 return BadRequest();
 
             return Ok(result);
+        }
+        [HttpGet]
+        [Route("GetMuscleGroups")]
+        public async Task<IActionResult> GetMuscleGroups()
+        {
+            var result = await _getExercisesWithMusclesRepository.GetMuscleGroupsAsyncRepo();
+
+            if (result == null)
+                return BadRequest();
+
+            return Ok(result);
+        }
+        [HttpPost]
+        [Route("AddExercise")]
+        public async Task<IActionResult> AddExercise(AddExerciseRequest addExerciseRequest)
+        {
+            var result = await _getExercisesWithMusclesRepository.AddExerciseAsyncRepo(addExerciseRequest);
+
+            if (result == 0)
+                return BadRequest();
+
+            return Ok();
         }
     }
 }
